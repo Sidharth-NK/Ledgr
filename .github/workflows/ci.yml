@@ -1,4 +1,5 @@
 name: CI
+
 on:
   push:
     branches: [main]
@@ -8,27 +9,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout the code
+      - name: Check out the code
         uses: actions/checkout@v4
 
       - name: Set up JDK 25
         uses: actions/setup-java@v4
-
         with:
           distribution: temurin
           java-version: 25
 
-      - name: Set up Gradle (caches dependencies)
+      - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build and run unit tests
-      - run: ./gradlew assembleDebug testDebugUnitTest --stacktrace
+        run: ./gradlew assembleDebug testDebugUnitTest --stacktrace
 
       - name: Verify no INTERNET permission
-      - run: |
+        run: |
           if $ANDROID_HOME/cmdline-tools/latest/bin/apkanalyzer manifest permissions app/build/outputs/apk/debug/app-debug.apk | grep -q INTERNET; then
-            echo "INTERNET permission found"; exit 1
+            echo "INTERNET permission found"
+            exit 1
           fi
-
-
-    
