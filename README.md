@@ -1,4 +1,4 @@
-# This is an AI-Ledger mobile application 
+# Ledgr
 ### Primary Functionality
 - Takes photo of bills / uploads pdfs of bills,receipts etc
 - updates the database 
