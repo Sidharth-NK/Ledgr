@@ -141,6 +141,18 @@ must be safe by construction, not by remembering.
 
 ---
 
+## D-011 Disable Android Backup (2026-10)
+
+**Context.** The Android Studio templates ships with `allowBackup="true"`, which lets Android copy the app's data (receipt database, raw OCR text) to the user's Google Account. 
+
+**Decision.** Set allowBackup="False"
+
+**Why.** It contradicts the "no cloud, fully private" promise. Receipts are personal purchase history.
+
+**Cost.** Data is lost if the user changes phones. A later explicit local export, controlled by the user, can cover that.
+
+**Revisit when.** An export or import feature is added.
+
 ## Template for new entries
 
 ```
