@@ -1,7 +1,7 @@
 # Ledgr
 ![CI](https://github.com/Sidharth-NK/Ledgr/actions/workflows/ci.yml/badge.svg)
 ### Primary Functionality
-- Takes photo of bills / uploads pdfs of bills,receipts etc
+- Takes photo of bills / uploads pdf of bills,receipts etc
 - updates the database 
 - ask financial questions regarding your spend culture or income spent areas etc
 
